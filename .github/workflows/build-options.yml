@@ -43,7 +43,7 @@ jobs:
           nix-build ${{ inputs.file }} -A ${{ inputs.attribute }}
           cp result/share/doc/${{ inputs.doc-dir }}/options.json{,.br} ../site/${{ inputs.doc-dir }}/
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ inputs.doc-dir }}
           path: site
