@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - ".github/workflows/*.yml"
+      - '.github/workflows/*.yml'
   schedule:
-    - cron: "38 3 * * *"
+    - cron: '38 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -43,8 +43,8 @@ jobs:
     with:
       repository: LnL7/nix-darwin
       ref: refs/heads/nix-darwin-26.05
-      path: nix-darwin
-      doc-dir: darwin-stable
+      path: nix-darwin-stable
+      doc-dir: darwin
       file: release.nix
       attribute: docs.optionsJSON
       runs-on: macos-15
@@ -53,8 +53,8 @@ jobs:
     with:
       repository: nix-community/home-manager
       ref: refs/heads/release-26.05
-      path: home-manager
-      doc-dir: home-manager-stable
+      path: home-manager-stable
+      doc-dir: home-manager
       file: default.nix
       attribute: docs.json
       runs-on: ubuntu-latest
@@ -81,7 +81,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     concurrency:
-      group: "pages"
+      group: 'pages'
       cancel-in-progress: false
     environment:
       name: github-pages
