@@ -18,7 +18,7 @@ jobs:
   build-darwin-options:
     uses: ./.github/workflows/build-options.yml
     with:
-      repository: LnL7/nix-darwin
+      repository: nix-darwin/nix-darwin
       ref: refs/heads/master
       path: nix-darwin
       doc-dir: darwin
