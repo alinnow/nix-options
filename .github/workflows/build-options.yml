@@ -37,13 +37,13 @@ jobs:
 
       - name: Build options.json for ${{ inputs.path }}
         run: |
-          mkdir -p site/${{ inputs.doc-dir }}
+          mkdir -p site/${{ inputs.path }}
           cd ${{ inputs.path }}
-          git rev-parse HEAD > ../site/${{ inputs.doc-dir }}/revision
+          git rev-parse HEAD > ../site/${{ inputs.path }}/revision
           nix-build ${{ inputs.file }} -A ${{ inputs.attribute }}
-          cp result/share/doc/${{ inputs.doc-dir }}/options.json{,.br} ../site/${{ inputs.doc-dir }}/
+          cp result/share/doc/${{ inputs.doc-dir }}/options.json{,.br} ../site/${{ inputs.path }}/
 
       - uses: actions/upload-artifact@v7
         with:
-          name: ${{ inputs.doc-dir }}
+          name: ${{ inputs.path }}
           path: site
