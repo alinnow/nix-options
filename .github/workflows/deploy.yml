@@ -61,7 +61,7 @@ jobs:
       file: default.nix
       attribute: docs.json
       runs-on: ubuntu-latest
-      nixpkgs-branch: nixpkgs-26.05
+      nixpkgs-branch: nixos-26.05
 
   assemble:
     runs-on: ubuntu-latest
