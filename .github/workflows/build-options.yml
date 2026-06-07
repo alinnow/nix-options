@@ -19,6 +19,8 @@ on:
         type: string
       runs-on:
         type: string
+      nixpkgs-branch:
+        type: string
 
 jobs:
   build:
@@ -33,7 +35,7 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
         with:
-          nix_path: nixpkgs=channel:nixpkgs-unstable
+          nix_path: nixpkgs=channel:${{ inputs.nixpkgs-branch }}
 
       - name: Build options.json for ${{ inputs.path }}
         run: |

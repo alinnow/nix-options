@@ -25,6 +25,7 @@ jobs:
       file: release.nix
       attribute: docs.optionsJSON
       runs-on: macos-15
+      nixpkgs-branch: nixpkgs-unstable
   build-home-manager-unstable-options:
     uses: ./.github/workflows/build-options.yml
     with:
@@ -35,6 +36,7 @@ jobs:
       file: default.nix
       attribute: docs.json
       runs-on: ubuntu-latest
+      nixpkgs-branch: nixpkgs-unstable
   build-nur-packages:
     uses: ./.github/workflows/build-nur-packages.yml
 
@@ -48,6 +50,7 @@ jobs:
       file: release.nix
       attribute: docs.optionsJSON
       runs-on: macos-15
+      nixpkgs-branch: nixpkgs-26.05-darwin
   build-home-manager-stable-options:
     uses: ./.github/workflows/build-options.yml
     with:
@@ -58,6 +61,7 @@ jobs:
       file: default.nix
       attribute: docs.json
       runs-on: ubuntu-latest
+      nixpkgs-branch: nixpkgs-26.05
 
   assemble:
     runs-on: ubuntu-latest
