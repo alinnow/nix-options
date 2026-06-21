@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout nur-combined
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: nix-community/nur-combined
           ref: refs/heads/main
           path: nur-combined
 
       - name: Checkout nur-search
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: nix-community/nur-search
           ref: refs/heads/main
